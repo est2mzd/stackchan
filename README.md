@@ -15,7 +15,7 @@
 +---------------------------+                      +---------------------------+
 ```
 
-いま動くのは **フェーズ1の時計画面（USB）**。会話・音声コマンド・Calendar は未実装。
+いま動くのは **フェーズ1の時計画面** と、フェーズ2〜4のホスト経路（マイク PCM、echo 会話、Calendar 判定）。Google OAuth と実スピーカ ACK は未確認。フェーズ5は未実装。
 
 調査ログは `agent_reports/`。この README は手順だけ書く。
 
@@ -112,17 +112,36 @@ Wi-Fi にするとき（未確認）: `config.h` に 2.4GHz の SSID とパス�
 .venv/bin/pytest -q host/test_clock_format.py
 ```
 
-## フェーズ2 — 音声で時計モード（未実装）
+## フェーズ2 — 音声で時計モード
 
-予定: マイク音声を PC が受け、「時計モード」で時計画面、「会話モード」で抜ける。タッチでも同じ切替。再生中は録音しない。
+```bash
+.venv/bin/python host/server.py --serial /dev/ttyACM0 --weekday en --asr whisper --tts none --llm echo
+```
 
-## フェーズ3 — 会話（未実装）
+液晶に触れると時計と会話を切り替える。発話「時計モード」「会話モード」「戻って」でも切替。再生中は録音しない。
 
-予定: マイク → ASR → LLM（Ollama または ChatGPT）→ TTS → スピーカー。画面に発話と応答。LLM は PC だけ。
+## フェーズ3 — 会話
 
-## フェーズ4 — Google Calendar（未実装）
+```bash
+.venv/bin/python host/server.py --serial /dev/ttyACM0 --asr whisper --tts edge --llm echo
+```
 
-予定: PC が Calendar API を見る。X 分前（初期 10 分）に時計の下へ予定を足し、TTS で読む。トークンは `host/.env` などローカルのみ。
+ChatGPT: `OPENAI_API_KEY` を環境に出し `--llm openai`。Ollama: `--llm ollama --llm-base-url http://127.0.0.1:11434`。LLM は PC だけ。
+
+## フェーズ4 — Google Calendar
+
+`host/google_credentials.json`（gitignore）を置き、初回だけブラウザで OAuth する。トークンは `host/google_token.json`。
+
+```bash
+.venv/bin/python host/server.py --serial /dev/ttyACM0 --notify-minutes 10
+```
+
+credentials が無いあいだのデモ:
+
+```bash
+.venv/bin/python host/server.py --serial /dev/ttyACM0 --notify-minutes 1 \
+  --calendar-demo-in-sec 70 --calendar-demo-title 定例 --asr none --tts none
+```
 
 ## フェーズ5 — Jetson（未実装・任意）
 
