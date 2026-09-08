@@ -7,3 +7,5 @@ firmware/clock_ws/include/config.h
 vendor/
 .pio/
 host/.env
+host/google_credentials.json
+host/google_token.json
