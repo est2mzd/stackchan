@@ -1,0 +1,2 @@
+serial opened /dev/ttyACM0
+websocket ws://0.0.0.0:8000/ws/stackchan

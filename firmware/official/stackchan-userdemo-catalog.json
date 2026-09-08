@@ -1,0 +1,211 @@
+{
+  "name": "StackChan-UserDemo",
+  "author": "M5Stack",
+  "id": "693b79a247a3cbaeff81b483",
+  "description": "·_·\nStackChan is a super cute desktop robot co-created by M5Stack and the user community. It is powered by AI, and all the hardware and software is open-source. Download the app, pair with your StackChan, and get more fun! ",
+  "versions": [
+    {
+      "version": "V0.4",
+      "published_at": "2025-12-12",
+      "file": "dc07f852c70e01af6286c2d032f974d2.bin",
+      "published": true,
+      "change_log": ""
+    },
+    {
+      "version": "V0.6",
+      "published_at": "2025-12-19",
+      "file": "7de647aa96aa6e9f74ddc4c88e5dd94b.bin",
+      "published": true,
+      "change_log": ""
+    },
+    {
+      "version": "V0.7",
+      "published_at": "2025-12-26",
+      "file": "b4b3530d24f9bf38deba1c10d0c549fc.bin",
+      "published": true,
+      "change_log": ""
+    },
+    {
+      "version": "V0.8",
+      "published_at": "2025-12-27",
+      "file": "1723a0d1eeb7573ec7d94b81c174230e.bin",
+      "published": true,
+      "change_log": ""
+    },
+    {
+      "version": "V0.9",
+      "published_at": "2025-12-28",
+      "file": "d815d8acc8279982cc6c6dc4b7976de9.bin",
+      "published": true,
+      "change_log": ""
+    },
+    {
+      "version": "V0.10",
+      "published_at": "2025-12-29",
+      "file": "9de3cb3a41e6bfcec10e488111e97fe5.bin",
+      "published": true,
+      "change_log": ""
+    },
+    {
+      "version": "V0.11",
+      "published_at": "2025-12-31",
+      "file": "26f4095dca2f7554220260c9cb55b313.bin",
+      "published": true,
+      "change_log": ""
+    },
+    {
+      "version": "V0.12",
+      "published_at": "2026-01-08",
+      "file": "e529c39cb5d5fa5cd53d243c440341da.bin",
+      "published": true,
+      "change_log": ""
+    },
+    {
+      "version": "V0.13",
+      "published_at": "2026-01-13",
+      "file": "096c953b63fdb7edb42c1acfc68cfba9.bin",
+      "published": true,
+      "change_log": ""
+    },
+    {
+      "version": "V0.14",
+      "published_at": "2026-01-16",
+      "file": "98fb67ef96ff2f4fe0d363392a7b608b.bin",
+      "published": true,
+      "change_log": ""
+    },
+    {
+      "version": "V0.15",
+      "published_at": "2026-01-22",
+      "file": "c3d79f55f2d74069ed43c610be644f4f.bin",
+      "published": true,
+      "change_log": ""
+    },
+    {
+      "version": "V0.16",
+      "published_at": "2026-01-26",
+      "file": "be2f5229e05ba5adbde496b9a22359a4.bin",
+      "published": true,
+      "change_log": ""
+    },
+    {
+      "version": "V0.17",
+      "published_at": "2026-01-28",
+      "file": "7ff964477795f3757cb700a7d92ba821.bin",
+      "published": true,
+      "change_log": ""
+    },
+    {
+      "version": "V0.18",
+      "published_at": "2026-02-27",
+      "file": "ecb7e1dfe9687ee11c4a670fe18e9fa0.bin",
+      "published": true,
+      "change_log": ""
+    },
+    {
+      "version": "V1.0.0",
+      "published_at": "2026-04-01",
+      "file": "bbfda56f21ebb1ddb77ff6d19046d439.bin",
+      "published": true,
+      "change_log": ""
+    },
+    {
+      "version": "V1.1.0",
+      "published_at": "2026-04-02",
+      "file": "c4e2d7c627ebec8f9e12b9fbbeea2681.bin",
+      "published": true,
+      "change_log": ""
+    },
+    {
+      "version": "V1.2.2",
+      "published_at": "2026-04-03",
+      "file": "855fdb4668f6f76e23ce672e2659efd5.bin",
+      "published": true,
+      "change_log": ""
+    },
+    {
+      "version": "V1.2.3",
+      "published_at": "2026-04-09",
+      "file": "080c346835f1d277f65247ca582b5360.bin",
+      "published": true,
+      "change_log": ""
+    },
+    {
+      "version": "V1.2.4",
+      "published_at": "2026-04-20",
+      "file": "3c8ffe6be0ca26375d836e10e06e3609.bin",
+      "published": true,
+      "change_log": ""
+    },
+    {
+      "version": "V1.2.5",
+      "published_at": "2026-04-23",
+      "file": "d3f43f6c6f3982fe4dbc2c3f1ff247b5.bin",
+      "published": true,
+      "change_log": ""
+    },
+    {
+      "version": "V1.2.6",
+      "published_at": "2026-04-24",
+      "file": "c22515db041ed8a1cb3c4c0253ff366a.bin",
+      "published": true,
+      "change_log": ""
+    },
+    {
+      "version": "V1.3.0",
+      "published_at": "2026-05-07",
+      "file": "6e2ecf9e3825d081df5e5c3cca889470.bin",
+      "published": true,
+      "change_log": ""
+    },
+    {
+      "version": "V1.3.1",
+      "published_at": "2026-05-11",
+      "file": "8d3ac555f915c0e565cd1aa3e31afcf7.bin",
+      "published": true,
+      "change_log": ""
+    },
+    {
+      "version": "V1.4.0",
+      "published_at": "2026-05-12",
+      "file": "f34d2bb95810688a9097a7e7770c2773.bin",
+      "published": true,
+      "change_log": ""
+    },
+    {
+      "version": "V1.4.1",
+      "published_at": "2026-05-13",
+      "file": "6895d411522259726dbf9d68197a69c8.bin",
+      "published": true,
+      "change_log": ""
+    },
+    {
+      "version": "V1.4.2",
+      "published_at": "2026-06-11",
+      "file": "2a01bededaa55d8a2650486cd90845a7.bin",
+      "published": true,
+      "change_log": ""
+    },
+    {
+      "version": "V1.4.3",
+      "published_at": "2026-07-02",
+      "file": "fb75fa818e63b7ee6b0d35eba308f386.bin",
+      "published": true,
+      "change_log": ""
+    },
+    {
+      "version": "V1.4.4",
+      "published_at": "2026-07-13",
+      "file": "790e3fcde496020aa7f188153b23e6f0.bin",
+      "published": true,
+      "change_log": ""
+    },
+    {
+      "version": "V1.5.1",
+      "published_at": "2026-07-31",
+      "file": "746f9662f48ac465cccf49bcad941414.bin",
+      "published": true,
+      "change_log": ""
+    }
+  ]
+}

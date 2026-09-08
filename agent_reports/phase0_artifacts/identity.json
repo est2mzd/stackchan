@@ -1,0 +1,38 @@
+{
+  "detected_at": "2026-09-08T22:40:00+09:00",
+  "usb": {
+    "vid_pid": "303a:1001",
+    "product": "Espressif USB JTAG/serial debug unit",
+    "serial_by_id": "usb-Espressif_USB_JTAG_serial_debug_unit_68:EE:8F:D7:49:F8-if00",
+    "port": "/dev/ttyACM0"
+  },
+  "chip": {
+    "type": "ESP32-S3 (QFN56) (revision v0.2)",
+    "features": "Wi-Fi, BT 5 (LE), Dual Core + LP Core, 240MHz",
+    "crystal": "40MHz",
+    "usb_mode": "USB-Serial/JTAG",
+    "mac": "68:ee:8f:d7:49:f8",
+    "flash_size": "16MB",
+    "flash_manufacturer": "46",
+    "flash_device": "4018",
+    "psram": "8MB"
+  },
+  "firmware_running": {
+    "project": "stack-chan",
+    "app_version": "1.5.1",
+    "compile_time": "Jul 31 2026 10:38:34",
+    "esp_idf": "v5.5.4",
+    "sku": "m5stack-stack-chan",
+    "uuid": "5f573ecd-938f-4661-837e-bf45f3a6a045",
+    "timezone_nvs": "JST-9"
+  },
+  "official_bin_saved": {
+    "name": "StackChan-UserDemo",
+    "version": "V1.5.1",
+    "published_at": "2026-07-31",
+    "file": "firmware/official/StackChan-UserDemo-V1.5.1.bin",
+    "sha256": "411578a2ebca2cfe3541fdc32aeddbc4703cf912a5daa7e1253f69306d6e1d87",
+    "size_bytes": 12783789,
+    "matches_running_version": true
+  }
+}

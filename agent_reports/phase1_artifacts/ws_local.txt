@@ -1,0 +1,7 @@
+SERVER:
+websocket ws://127.0.0.1:8000/ws/stackchan
+ws client ('127.0.0.1', 37792) path=/ws/stackchan
+ws client disconnected
+
+CLIENT:
+{"type": "clock", "lines": ["2026/09/08", "23:33:55", "Tuesday"]}

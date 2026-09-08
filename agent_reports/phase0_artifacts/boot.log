@@ -1,0 +1,156 @@
+I (99) boot:  6 coredump         Unknown data     01 03 00e00000ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0x28 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4038c2ba
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x1744
+load:0x403c8700,len:0xf40
+load:0x403cb700,len:0x3610
+entry 0x403c89c4
+I (24) boot: ESP-IDF v5.5.4 2nd stage bootloader
+I (24) boot: compile time Apr 13 2026 18:32:11
+I (25) boot: Multicore bootloader
+I (25) boot: chip revision: v0.2
+I (28) boot: efuse block revision: v1.4
+I (31) qio_mode: Enabling default flash chip QIO
+I (36) boot.esp32s3: Boot SPI Speed : 80MHz
+I (39) boot.esp32s3: SPI Mode       : QIO
+I (43) boot.esp32s3: SPI Flash Size : 16MB
+I (47) boot: Enabling RNG early entropy source...
+I (51) boot: Partition Table:
+I (54) boot: ## Label            Usage          Type ST Offset   Length
+I (60) boot:  0 nvs              WiFi data        01 02 00009000 00004000
+I (67) boot:  1 otadata          OTA data         01 00 0000d000 00002000
+I (73) boot:  2 phy_init         RF data          01 01 0000f000 00001000
+I (80) boot:  3 ota_0            OTA app          00 10 00020000 004f0000
+I (86) boot:  4 ota_1            OTA app          00 11 00510000 004f0000
+I (93) boot:  5 assets           Unknown data     01 82 00a00000 00400000
+I (99) boot:  6 coredump         Unknown data     01 03 00e00000 00010000
+I (106) boot: End of partition table
+I (109) esp_image: segment 0: paddr=00510020 vaddr=3c260020 size=11486ch (1132652) map
+I (274) esp_image: segment 1: paddr=00624894 vaddr=3fca9c00 size=08e34h ( 36404) load
+I (280) esp_image: segment 2: paddr=0062d6d0 vaddr=40378000 size=02948h ( 10568) load
+I (283) esp_image: segment 3: paddr=00630020 vaddr=42000020 size=25e3a0h (2483104) map
+I (631) esp_image: segment 4: paddr=0088e3c8 vaddr=4037a948 size=1f1b4h (127412) load
+I (653) esp_image: segment 5: paddr=008ad584 vaddr=50000000 size=00020h (    32) load
+I (666) boot: Loaded app from partition at offset 0x510000
+I (666) boot: Disabling RNG early entropy source...
+I (676) esp_psram: Found 8MB PSRAM device
+I (676) esp_psram: Speed: 80MHz
+I (677) cpu_start: Multicore app
+I (686) cpu_start: GPIO 44 and 43 are used as console UART I/O pins
+I (686) cpu_start: Pro cpu start user code
+I (686) cpu_start: cpu freq: 240000000 Hz
+I (688) app_init: Application information:
+I (692) app_init: Project name:     stack-chan
+I (696) app_init: App version:      1.5.1
+I (700) app_init: Compile time:     Jul 31 2026 10:38:34
+I (705) app_init: ELF file SHA256:  1de1c42f6...
+I (709) app_init: ESP-IDF:          v5.5.4
+I (713) efuse_init: Min chip rev:     v0.0
+I (717) efuse_init: Max chip rev:     v0.99 
+I (721) efuse_init: Chip rev:         v0.2
+I (725) heap_init: Initializing. RAM available for dynamic allocation:
+I (731) heap_init: At 3FCBB530 len 0002E1E0 (184 KiB): RAM
+I (736) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM
+I (741) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM
+I (747) heap_init: At 600FE000 len 00001FE8 (7 KiB): RTCRAM
+I (752) esp_psram: Adding pool of 8192K of PSRAM memory to heap allocator
+I (759) spi_flash: detected chip: generic
+I (762) spi_flash: flash io: qio
+I (767) sleep_gpio: Configure to isolate all GPIO pins in sleep state
+I (771) sleep_gpio: Enable automatic switching of GPIO sleep configuration
+I (786) main_task: Started on CPU0
+I (796) esp_psram: Reserving pool of 64K of internal memory for DMA/internal allocations
+I (796) main_task: Calling app_main()
+[1788874854505] [[32minfo[0m] [HAL] creating hal instance
+[1788874854511] [[32minfo[0m] [HAL] init
+[1788874854527] [[32minfo[0m] [HAL] xiaozhi board init
+I (826) Board: UUID=5f573ecd-938f-4661-837e-bf45f3a6a045 SKU=m5stack-stack-chan
+I (826) M5Stack-StackChan-Board: Init AXP2101
+I (826) M5Stack-StackChan-Board: Set charge current success
+I (836) M5Stack-StackChan-Board: Init power save timer: sleep=300 s, shutdown=600 s, allow_shutdown_when_charging=0
+I (846) M5Stack-StackChan-Board: Init AW9523
+     0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
+00: 00 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+10: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+20: -- 21 -- 23 -- -- -- -- -- -- -- -- -- -- -- -- 
+30: -- -- -- -- 34 -- 36 -- 38 -- -- -- -- -- -- -- 
+40: 40 41 -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+50: 50 51 -- -- -- -- -- -- 58 -- -- -- -- -- -- -- 
+60: -- -- -- -- -- -- -- -- 68 69 -- -- -- -- -- 6f 
+70: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+I (926) M5Stack-StackChan-Board: Init FT6336
+I (926) M5Stack-StackChan-Board: Init IlI9342
+I (936) ili9341: LCD panel create success, version: 1.2.0
+I (956) M5Stack-StackChan-Board: Reset IlI9342
+I (1086) M5Stack-StackChan-Board: CIPHER:0x64 / FIRMID:0x10 / VENDID:0x11, panel:ILI9342C
+I (1086) Display: Power management not supported
+I (1146) StackChanAvatarDisplay: Turning display on
+I (1146) StackChanAvatarDisplay: Initialize LVGL library
+I (1146) StackChanAvatarDisplay: Use 2MB of PSRAM for image cache
+I (1146) StackChanAvatarDisplay: Initialize LVGL port
+I (1156) StackChanAvatarDisplay: Adding LCD display
+I (1156) LVGL: Starting LVGL task
+I (1166) StackChanAvatarDisplay: Create boot logo label
+I (1206) M5Stack-StackChan-Board: Init Camera
+I (1206) gc0308: Detected Camera sensor PID=0x9b
+I (1286) StackChanCamera: Camera init success
+I (1296) Backlight: Set brightness to 75
+[1788874854997] [[32minfo[0m] [HAL-MCP] init
+[1788874854997] [[32minfo[0m] [HAL-MCP] add robot.get_head_angles tool
+I (1296) MCP: Add tool: self.robot.get_head_angles
+[1788874855007] [[32minfo[0m] [HAL-MCP] add robot.set_head_angles tool
+I (1306) MCP: Add tool: self.robot.set_head_angles
+[1788874855018] [[32minfo[0m] [HAL-MCP] add robot.set_led_color tool
+I (1316) MCP: Add tool: self.robot.set_led_color
+[1788874855028] [[32minfo[0m] [HAL-MCP] add robot.create_reminder tool
+I (1326) MCP: Add tool: self.robot.create_reminder
+[1788874855039] [[32minfo[0m] [HAL-MCP] add robot.get_reminders tool
+I (1336) MCP: Add tool: self.robot.get_reminders
+[1788874855050] [[32minfo[0m] [HAL-MCP] add robot.stop_reminder tool
+I (1356) MCP: Add tool: self.robot.stop_reminder
+[1788874855061] [[32minfo[0m] [HAL-HeadTouch] init
+I (1356) Si12T: Si12T initialized, version: 0.0.2
+I (1376) Si12T: Si12T setup done
+[1788874855081] [1788874855081] [[[32minfo[0m[32minfo[0m] ] [HAL-IOE] init
+[HAL-HeadTouch] start update task
+I (1576) PY32IOExpander: Version: 0x41
+[1788874855732] [[32minfo[0m] [HAL-IOE] init done
+[1788874855733] [[32minfo[0m] [HAL-RTC] init
+[1788874855733] [[32minfo[0m] [HAL-RTC] PCF8563 init ok
+[1788874855736] [[32minfo[0m] [HAL-RTC] load timezone from nvs: JST-9
+[1788874856000] [[32minfo[0m] [HAL-RTC] rtc synced to system (UTC): 2026-09-08 13:40:56
+[1788874856007] [[32minfo[0m] [HAL-IMU] init
+[1788874856309] [[32minfo[0m] [HAL-IMU] BMI270 init ok
+[1788874856309] [[32minfo[0m] [HAL-Servo] init
+I (2346) uart: ESP_INTR_FLAG_IRAM flag not set while CONFIG_UART_ISR_IN_IRAM is enabled, flag updated
+[1788874856317] [[32minfo[0m] [ScsServo] id: 1 get zero pos: 471 from settings
+[1788874856326] [[32minfo[0m] [ScsServo] id: 2 get zero pos: 635 from settings
+[1788874856333] [[32minfo[0m] [HAL] lvgl init
+[1788874856335] [[32minfo[0m] [HAL] create lvgl touchpad indev
+
+ _____ _____ _____ _____ _____ _____ _____ _____
+|     |     |     |   | |     |  _  |  |  |   __|
+| | | |  |  |  |  | | | |   --|     |    -|   __|
+|_|_|_|_____|_____|_|___|_____|__|__|__|__|_____|
+
+- @author Forairaaaaa
+- @version 2.3.3
+- @build at 10:38:47 Jul 31 2026
+
+I (2406) Assets: The storage free size is 20992 KB
+I (2406) Assets: The partition size is 4096 KB
+I (2546) Assets: The checksum calculation time is 133 ms
+[1788874856514] [[32minfo[0m] [Launcher] on create
+[1788874856514] [[32minfo[0m] [Launcher] on open
+[1788874856515] [[32minfo[0m] [LauncherView] init
+[1788874856552] [[32minfo[0m] [AI.AGENT] on create
+[1788874856553] [[32minfo[0m] [AVATAR] on create
+[1788874856553] [[32minfo[0m] [ESPNOW.REMOTE] on create
+[1788874856556] [[32minfo[0m] [APP.CENTER] on create
+[1788874856561] [[32minfo[0m] [EZDATA] on create
+[1788874856566] [[32minfo[0m] [DANCE] on create
+[1788874856570] [[32minfo[0m] [SETUP] on create
+I (10766) SystemInfo: free sram: 149675 minimal sram: 147055

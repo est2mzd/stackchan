@@ -1,0 +1,5 @@
+# Espressif USB-Serial/JTAG (ESP32-S3 / StackChan CoreS3)
+# Allows the login user in group plugdev to use esptool and serial logs
+# without being in dialout. MODE 0666 also covers temporary sessions.
+SUBSYSTEM=="tty", ATTRS{idVendor}=="303a", ATTRS{idProduct}=="1001", MODE="0666", GROUP="plugdev"
+SUBSYSTEM=="usb", ATTRS{idVendor}=="303a", ATTRS{idProduct}=="1001", MODE="0666", GROUP="plugdev"
