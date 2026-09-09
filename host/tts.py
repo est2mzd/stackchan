@@ -58,3 +58,15 @@ def _mp3_to_pcm(mp3: bytes) -> bytes:
 
 async def synth_none(text: str) -> bytes:
     return b""
+
+
+async def synth_edge_wav(text: str, voice: str = "ja-JP-NanamiNeural") -> bytes:
+    import edge_tts
+    from wavutil import mp3_to_wav16_mono
+
+    communicate = edge_tts.Communicate(text, voice)
+    buf = io.BytesIO()
+    async for chunk in communicate.stream():
+        if chunk["type"] == "audio":
+            buf.write(chunk["data"])
+    return await asyncio.to_thread(mp3_to_wav16_mono, buf.getvalue())

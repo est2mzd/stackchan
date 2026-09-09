@@ -1,0 +1,21 @@
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0x28 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4204beaa
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce3808,len:0x4bc
+load:0x403c9700,len:0xbd8
+load:0x403cc700,len:0x2a0c
+entry 0x403c98d0
+[  1063][I][esp32-hal-psram.c:96] psramInit(): PSRAM enabled
+[  1087][I][M5GFX.cpp:1060] init_impl(): [M5GFX] [Autodetect] load from NVS : board:27
+[  1095][I][esp32-hal-i2c.c:75] i2cInit(): Initialising I2C Master: sda=12 scl=11 freq=100000
+[  1109][I][M5GFX.cpp:1780] autodetect(): [M5GFX] [Autodetect] board_M5StackChan
+[  1269][I][esp32-hal-i2c.c:75] i2cInit(): Initialising I2C Master: sda=12 scl=11 freq=100000
+[  1280][I][M5GFX.cpp:597] initPanelByTouchVersion(): [M5GFX] CoreS3 touch CIPHER:0x64 / FIRMID:0x10 / VENDID:0x11, panel:ILI9342C
+[  1292][I][esp32-hal-i2c.c:75] i2cInit(): Initialising I2C Master: sda=12 scl=11 freq=100000
+[  1337][I][esp32-hal-i2c.c:75] i2cInit(): Initialising I2C Master: sda=12 scl=11 freq=100000
+[  1347][I][esp32-hal-i2c.c:75] i2cInit(): Initialising I2C Master: sda=12 scl=11 freq=100000
+{"type":"SELF_TEST","phase":"boot"}
+{"type":"SELF_TEST","phase":"tone","playWav":true,"played_ms":400}

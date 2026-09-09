@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import argparse
 import asyncio
+import errno
 import json
 import sys
 from datetime import datetime
@@ -11,6 +12,7 @@ from zoneinfo import ZoneInfo
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from clock_format import clock_message
+from defaults import WS_PORT
 
 try:
     import serial as serial_mod
@@ -21,6 +23,32 @@ try:
     import websockets
 except ImportError:
     websockets = None
+
+
+def open_serial(port: str):
+    ser = serial_mod.Serial()
+    ser.port = port
+    ser.baudrate = 115200
+    ser.timeout = 0.2
+    ser.dtr = False
+    ser.rts = False
+    ser.open()
+    return ser
+
+
+async def drain_serial(ser) -> None:
+    buf = b""
+    while True:
+        chunk = await asyncio.to_thread(ser.read, 4096)
+        if not chunk:
+            await asyncio.sleep(0.02)
+            continue
+        buf += chunk
+        while b"\n" in buf:
+            line, buf = buf.split(b"\n", 1)
+            text = line.decode("utf-8", errors="replace").strip()
+            if text:
+                print(text, flush=True)
 
 
 async def broadcast_loop(
@@ -40,9 +68,7 @@ async def broadcast_loop(
     if serial_port:
         if serial_mod is None:
             raise SystemExit("pyserial is required for --serial")
-        ser = serial_mod.Serial(serial_port, 115200, timeout=0.1)
-        ser.dtr = False
-        ser.rts = False
+        ser = open_serial(serial_port)
         print(f"serial opened {serial_port}", flush=True)
         await asyncio.sleep(3)
 
@@ -64,8 +90,11 @@ async def broadcast_loop(
             connected.discard(websocket)
             print("ws client disconnected", flush=True)
 
-    async with websockets.serve(handler, ws_host, ws_port):
-        print(f"websocket ws://{ws_host}:{ws_port}{ws_path}", flush=True)
+    drain_task = None
+    if ser is not None:
+        drain_task = asyncio.create_task(drain_serial(ser))
+
+    async def tick() -> None:
         while True:
             now = datetime.now(tz).replace(tzinfo=None)
             payload = json.dumps(clock_message(now, weekday_lang), ensure_ascii=False) + "\n"
@@ -79,10 +108,30 @@ async def broadcast_loop(
                 connected.discard(ws)
             if ser is not None:
                 try:
-                    ser.write(payload.encode("utf-8"))
+                    await asyncio.to_thread(ser.write, payload.encode("utf-8"))
+                    ser.flush()
                 except Exception as exc:
                     print(f"serial write failed: {exc}", flush=True)
             await asyncio.sleep(1)
+
+    try:
+        if ws_port <= 0:
+            print("websocket disabled", flush=True)
+            await tick()
+            return
+        async with websockets.serve(handler, ws_host, ws_port):
+            print(f"websocket ws://{ws_host}:{ws_port}{ws_path}", flush=True)
+            await tick()
+    except OSError as exc:
+        if exc.errno == errno.EADDRINUSE:
+            raise SystemExit(
+                f"port {ws_port} already in use ({ws_host}:{ws_port}). "
+                f"別のポートで起動する: --ws-port {ws_port + 1} （0 で WebSocket なし）"
+            ) from exc
+        raise
+    finally:
+        if drain_task is not None:
+            drain_task.cancel()
 
 
 def main() -> None:
@@ -91,7 +140,7 @@ def main() -> None:
     parser.add_argument("--tz", default="Asia/Tokyo")
     parser.add_argument("--serial", default="")
     parser.add_argument("--ws-host", default="0.0.0.0")
-    parser.add_argument("--ws-port", type=int, default=8000)
+    parser.add_argument("--ws-port", type=int, default=WS_PORT)
     parser.add_argument("--ws-path", default="/ws/stackchan")
     args = parser.parse_args()
     asyncio.run(

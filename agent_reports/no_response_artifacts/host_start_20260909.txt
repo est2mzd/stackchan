@@ -1,0 +1,40 @@
+---
+pid: 169473
+cwd: "/home/takuya/work/stackchan"
+command: ".venv/bin/python host/server.py --serial /dev/ttyACM0 --weekday en --asr whisper --tts edge --llm openai"
+title: "Start unified host with OpenAI TTS"
+status: running  
+started_at: 2026-09-09T13:00:39.180Z
+running_for_ms: 10008    
+---
+serial opened /dev/ttyACM0
+websocket ws://0.0.0.0:15151
+serial ESP-ROM:esp32s3-20210327
+serial Build:Mar 27 2021
+serial rst:0x15 (USB_UART_CHIP_RESET),boot:0x28 (SPI_FAST_FLASH_BOOT)
+serial Saved PC:0x42079bca
+serial SPIWP:0xee
+serial mode:DIO, clock div:1
+serial load:0x3fce3808,len:0x4bc
+serial load:0x403c9700,len:0xbd8
+serial load:0x403cc700,len:0x2a0c
+serial entry 0x403c98d0
+serial [  1118][I][esp32-hal-psram.c:96] psramInit(): PSRAM enabled
+serial [  1142][I][M5GFX.cpp:1060] init_impl(): [M5GFX] [Autodetect] load from NVS : board:27
+serial [  1150][I][esp32-hal-i2c.c:75] i2cInit(): Initialising I2C Master: sda=12 scl=11 freq=100000
+serial [  1164][I][M5GFX.cpp:1780] autodetect(): [M5GFX] [Autodetect] board_M5StackChan
+serial [  1324][I][esp32-hal-i2c.c:75] i2cInit(): Initialising I2C Master: sda=12 scl=11 freq=100000
+serial [  1335][I][M5GFX.cpp:597] initPanelByTouchVersion(): [M5GFX] CoreS3 touch CIPHER:0x64 / FIRMID:0x10 / VENDID:0x11, pane
+serial [  1347][I][esp32-hal-i2c.c:75] i2cInit(): Initialising I2C Master: sda=12 scl=11 freq=100000
+serial [  1392][I][esp32-hal-i2c.c:75] i2cInit(): Initialising I2C Master: sda=12 scl=11 freq=100000
+serial [  1402][I][esp32-hal-i2c.c:75] i2cInit(): Initialising I2C Master: sda=12 scl=11 freq=100000
+CLOCK_FW_READY
+CLOCK_APPLIED
+CLOCK_APPLIED
+CLOCK_APPLIED
+CLOCK_APPLIED
+CLOCK_APPLIED
+CLOCK_APPLIED
+CLOCK_APPLIED
+CLOCK_APPLIED
+CLOCK_APPLIED

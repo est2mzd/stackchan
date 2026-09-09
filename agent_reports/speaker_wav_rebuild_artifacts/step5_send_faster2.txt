@@ -1,0 +1,23 @@
+serial opened /dev/ttyACM0
+device ESP-ROM:esp32s3-20210327
+device Build:Mar 27 2021
+device [  1063][I][esp32-hal-psram.c:96] psramInit(): PSRAM enabled
+device [  1087][I][M5GFX.cpp:1060] init_impl(): [M5GFX] [Autodetect] load from NVS : board:27
+device [  1095][I][esp32-hal-i2c.c:75] i2cInit(): Initialising I2C Master: sda=12 scl=11 freq=100000
+device l-i2c.c:75] i2cInit(): Initialising I2C Master: sda=12 scl=11 freq=100000
+device [  1337][I][esp32-hal-i2c.c:75] i2cInit(): Initialising I2C Master: sda=12 scl=11 freq=100000
+device [  1347][I][esp32-hal-i2c.c:75] i2cInit(): Initialising I2C Master: sda=12 scl=11 freq=100000
+{'type': 'SELF_TEST', 'phase': 'tone', 'playWav': True, 'played_ms': 400}
+send wav bytes=124460 crc32=bb518a81 duration=3.89s peak=20865
+{'type': 'SPEAK_READY', 'id': 1}
+{'type': 'SPEAK_PROGRESS', 'id': 1, 'got': 16384}
+{'type': 'SPEAK_PROGRESS', 'id': 1, 'got': 32768}
+{'type': 'SPEAK_PROGRESS', 'id': 1, 'got': 49152}
+{'type': 'SPEAK_PROGRESS', 'id': 1, 'got': 65536}
+{'type': 'SPEAK_PROGRESS', 'id': 1, 'got': 81920}
+{'type': 'SPEAK_PROGRESS', 'id': 1, 'got': 98304}
+{'type': 'SPEAK_PROGRESS', 'id': 1, 'got': 114688}
+{'type': 'SPEAK_RECEIVED', 'id': 1, 'bytes': 124460, 'crc32': 3142683265}
+{'type': 'SPEAK_FINISHED', 'id': 1, 'played_ms': 3888}
+finished {'type': 'SPEAK_FINISHED', 'id': 1, 'played_ms': 3888}
+elapsed_sec=8.32

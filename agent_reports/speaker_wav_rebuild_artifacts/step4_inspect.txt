@@ -1,0 +1,13 @@
+path=agent_reports/speaker_wav_rebuild_artifacts/hello.wav
+bytes=124460 crc32=bb518a81
+codec_name=pcm_s16le
+sample_rate=16000
+channels=1
+bits_per_sample=16
+channels=1
+sample_rate=16000
+bits=16
+duration_s=3.888
+peak=20865
+rms=1797
+ok

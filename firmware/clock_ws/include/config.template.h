@@ -6,7 +6,7 @@
 #define WIFI_PASSWORD_H ""
 
 #define SERVER_HOST_H "192.168.10.14"
-#define SERVER_PORT_H 8000
+#define SERVER_PORT_H 15151
 #define SERVER_PATH_H "/ws/stackchan"
 
 #endif

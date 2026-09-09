@@ -34,6 +34,7 @@
 ```bash
 python3 -m venv .venv
 .venv/bin/pip install esptool pyserial websockets pytest platformio
+cp tools/pytest_noload.pth .venv/lib/python3.12/site-packages/
 ```
 
 シリアル権限（一度だけ）:
@@ -90,6 +91,8 @@ cd ../..
 .venv/bin/python host/clock_server.py --serial /dev/ttyACM0 --weekday en --tz Asia/Tokyo
 ```
 
+このプロセスを止めない。止めると約 2.5 秒で画面が「未接続」になる。pytest だけでは画面は動かない。
+
 画面例:
 
 ```
@@ -100,7 +103,7 @@ Tuesday
 
 日本語曜日は `--weekday ja`。ホストを止めると約 2.5 秒で「未接続」になる。
 
-Wi-Fi にするとき（未確認）: `config.h` に 2.4GHz の SSID とパスワード、`SERVER_HOST_H` に PC の LAN IP を書き、再ビルドして焼く。本体は `ws://<PC_IP>:8000/ws/stackchan` に接続する。パスワードは README に書かない。
+Wi-Fi にするとき（未確認）: `config.h` に 2.4GHz の SSID とパスワード、`SERVER_HOST_H` に PC の LAN IP を書き、再ビルドして焼く。本体は `ws://<PC_IP>:15151/ws/stackchan` に接続する。パスワードは README に書かない。
 
 ```bash
 .venv/bin/python host/clock_server.py --weekday en --tz Asia/Tokyo
@@ -118,15 +121,17 @@ Wi-Fi にするとき（未確認）: `config.h` に 2.4GHz の SSID とパス�
 .venv/bin/python host/server.py --serial /dev/ttyACM0 --weekday en --asr whisper --tts none --llm echo
 ```
 
-液晶に触れると時計と会話を切り替える。発話「時計モード」「会話モード」「戻って」でも切替。再生中は録音しない。
+WebSocket は `15151`（8000 ではない）。別プロセスが 8000 を使っていてもこのコマンドは落ちない。
+
+液晶に触れると会話を始める。もう一度触ると時計に戻る。発話「時計モード」でも戻る。
 
 ## フェーズ3 — 会話
 
 ```bash
-.venv/bin/python host/server.py --serial /dev/ttyACM0 --asr whisper --tts edge --llm echo
+.venv/bin/python host/server.py --serial /dev/ttyACM0 --weekday en --asr whisper --tts edge --llm openai
 ```
 
-ChatGPT: `OPENAI_API_KEY` を環境に出し `--llm openai`。Ollama: `--llm ollama --llm-base-url http://127.0.0.1:11434`。LLM は PC だけ。
+ChatGPT: `host/.env` に `OPENAI_API_KEY=` を書く。返事の声は **StackChan のスピーカー**（USB で生 PCM、受信しながら再生）。PC では鳴らさない。復唱だけなら `--llm echo`。Ollama: `--llm ollama --llm-base-url http://127.0.0.1:11434`。LLM は PC だけ。
 
 ## フェーズ4 — Google Calendar
 

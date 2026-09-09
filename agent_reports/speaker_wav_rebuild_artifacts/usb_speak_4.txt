@@ -1,0 +1,33 @@
+codec_name=pcm_s16le
+sample_rate=16000
+channels=1
+bits_per_sample=16
+
+{'channels': 1, 'sample_rate': 16000, 'bits': 16, 'nframes': 62208, 'data_bytes': 124416, 'duration_s': 3.888, 'peak': 20947, 'rms': 1797}
+PCで内容確認する場合（完成条件ではない）: ffplay -autoexit agent_reports/speaker_wav_rebuild_artifacts/hello.wav  または aplay agent_reports/speaker_wav_rebuild_artifacts/hello.wav
+serial opened /dev/ttyACM0
+send wav bytes=124460 crc32=11c8aa7f duration=3.89s peak=20947
+{'type': 'SPEAK_READY', 'id': 1}
+{'type': 'SPEAK_ERROR', 'id': 1, 'reason': 'timeout', 'got': 82732}
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/takuya/work/stackchan/host/speaker_test.py", line 150, in <module>
+    main()
+  File "/home/takuya/work/stackchan/host/speaker_test.py", line 146, in main
+    asyncio.run(amain())
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/base_events.py", line 687, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/home/takuya/work/stackchan/host/speaker_test.py", line 140, in amain
+    finished = await send_wav(ser, wav, sid=1)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/takuya/work/stackchan/host/speaker_test.py", line 90, in send_wav
+    raise RuntimeError(msg)
+RuntimeError: {'type': 'SPEAK_ERROR', 'id': 1, 'reason': 'timeout', 'got': 82732}

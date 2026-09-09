@@ -1,0 +1,3 @@
+wrote agent_reports/speaker_wav_rebuild_artifacts/hello.wav
+text=こんにちは。音声テストです。
+bytes=124460 duration_s=3.89

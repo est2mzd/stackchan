@@ -1,0 +1,22 @@
+serial opened /dev/ttyACM0
+send wav bytes=124460 crc32=bb518a81 duration=3.89s peak=20865
+{'type': 'SPEAK_READY', 'id': 1}
+{'type': 'SPEAK_PROGRESS', 'id': 1, 'got': 8192}
+{'type': 'SPEAK_PROGRESS', 'id': 1, 'got': 16384}
+{'type': 'SPEAK_PROGRESS', 'id': 1, 'got': 24576}
+{'type': 'SPEAK_PROGRESS', 'id': 1, 'got': 32768}
+{'type': 'SPEAK_PROGRESS', 'id': 1, 'got': 40960}
+{'type': 'SPEAK_PROGRESS', 'id': 1, 'got': 49152}
+{'type': 'SPEAK_PROGRESS', 'id': 1, 'got': 57344}
+{'type': 'SPEAK_PROGRESS', 'id': 1, 'got': 65536}
+{'type': 'SPEAK_PROGRESS', 'id': 1, 'got': 73728}
+{'type': 'SPEAK_PROGRESS', 'id': 1, 'got': 81920}
+{'type': 'SPEAK_PROGRESS', 'id': 1, 'got': 90112}
+{'type': 'SPEAK_PROGRESS', 'id': 1, 'got': 98304}
+{'type': 'SPEAK_PROGRESS', 'id': 1, 'got': 106496}
+{'type': 'SPEAK_PROGRESS', 'id': 1, 'got': 114688}
+{'type': 'SPEAK_PROGRESS', 'id': 1, 'got': 122880}
+{'type': 'SPEAK_RECEIVED', 'id': 1, 'bytes': 124460, 'crc32': 3142683265}
+{'type': 'SPEAK_FINISHED', 'id': 1, 'played_ms': 3888}
+finished {'type': 'SPEAK_FINISHED', 'id': 1, 'played_ms': 3888}
+elapsed_sec=10.23

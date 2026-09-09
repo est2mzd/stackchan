@@ -1,0 +1,3 @@
+bytes=124460
+crc32=11c8aa7f
+{'channels': 1, 'sample_rate': 16000, 'bits': 16, 'nframes': 62208, 'data_bytes': 124416, 'duration_s': 3.888, 'peak': 20947, 'rms': 1797}

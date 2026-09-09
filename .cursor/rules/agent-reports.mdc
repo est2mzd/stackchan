@@ -1,5 +1,5 @@
 ---
-description: レポートは背景・目的・結論・詳細。詳細はコマンド／引数／結果の3行組。
+description: レポートは背景・目的・手段・結論・詳細。詳細の再現は説明行の次にコマンド。
 alwaysApply: true
 ---
 
@@ -7,19 +7,15 @@ alwaysApply: true
 
 調査・計画・実施の出力は `agent_reports/` に連番ファイルで出す。同じ作業の体裁直しは番号を増やさず、そのファイルを更新する。
 
-本文の順: **背景 → 目的 → 結論 → 詳細**。結論の図は `.cursor/rules/ascii-block-diagram.mdc`。正本は `AGENTS.md`。
+本文の順: **背景 → 目的 → 手段 → 結論 → 詳細**。背景・目的・手段の定義は `.cursor/rules/background-purpose-means.mdc`。書いたら **手段 → 目的 → 背景** で検算し、通らなければ背景から書き直す。細かい数値や型は手段に書かない。結論の図は `.cursor/rules/ascii-block-diagram.mdc`。正本は `AGENTS.md`。第三者（履歴なし）が読め、主語はエージェントにしない。同ルール「読者と主人公」。
 
-詳細の最小単位。ラベルを変えない。各ラベルの間は必ず空行。
+詳細の再現は `.cursor/rules/reproduce-commands.mdc`。見出しは **実践方法** → **結果** → **結果詳細**。「プログラム」と書かない。送り方は口・運ぶもの・運ぶ操作・着く場所。「送らない」だけでは送り方にしない。説明行（PC または StackChan、目的、何をする）の次にコマンド。Python は `.py` ファイルにして `python3 そのファイル`。中身には背景と意図のコメントを多めに。レポートからはそのファイルへリンク。正本は `.cursor/rules/python-as-files.mdc`。
 
 ```
-コマンド： lsusb
-
-- 目的： PC が本体を USB デバイスとして認識しているか確認する
-
-引数： なし
-
-結果：
-（stdout/stderr）
+# PCで、本体がUSBデバイスとして見えるか確認するために、接続一覧を出す
+lsusb
 ```
 
-引数は全フラグ・パス・リダイレクト・パイプを書く。無いなら「なし」とコマンドの役割を1文。失敗も同じ3行組で残す。正本は `AGENTS.md`。
+本文は可能な限り箇条書き。正本は `.cursor/rules/bullet-lists.mdc`。
+
+読み手は大学院の初心者。用語は初出で説明し、内部知識を省略しない。同ルール `.cursor/rules/background-purpose-means.mdc` の「読み手」。
